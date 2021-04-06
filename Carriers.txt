@@ -1,0 +1,62 @@
+Our RSR Carrier Setup:
+
+Static:
+
+BLUE:
+CVN-74 John C Stennis - Carrier - Stennis
+CVN-71 Theodore Roosevelt - Super Carrrier - CVN_71
+
+RED:
+CV 1143.5 Admiral Kuznetsov - Carrier - KUZNECOW
+CV 1143.5 Admiral Kuznetsov (2017) - Super Carrier - CV_1143_5
+
+
+Dynamic Naval Warehouse:
+
+BLUE: 
+CVN-73 George Washington - Super Carrier - CVN_73
+
+RED: 
+CV 1143.5 Admiral Kuznetsov (2017) - Super Carrier - CV_1143_5
+
+
+Admiral Kuznetsov 111MHz AM - Starting
+Admiral Kuznetsov Super Carrier 112MHz AM - Starting
+Transport Dock TACAN TDC 4X, 114 AM - Dynamic
+
+John C. Stennis TACAN JCS 11X, ICLS 1, 211AM - Starting
+Theodore Roosevelt TACAN TRJ 12X, ICLS 2, 212 AM - Starting
+George Washington TACAN GWC 13X, ICLS 3, 213 AM - Dynamic
+Tarawa TACAN TAR 14X, ICLS 4, 214 AM - Dynamic
+
+We had this limitation where our ships were distinguished by TYPE only. This created a problem where you could not use the same ship twice side by side.  This is fixed now:
+In order to have both Dynamic Super Carrier and Static Super Carrier side by side, we need to check in the code which Carrier is being killed.  Is it the one from the warehouse, or is it the one from the miz file.  In case we killed
+the dynamic ship, then we respawn him in the naval warehouse.  If we killed the ship that is part of the mission, then nothing happens.  We do not respawn him.  The way this is done is by a new function where we check for carrier type 
+(CV_1143_5) and then we check for naval warehouse carrier name: "Resupply".  If the name of the unit has "Resupply" in it, it came from the warehouse.  That's when and only when we run the Naval Warehouse Respawn logic. Problem solved.
+
+Added:
+Being able to spawn on Super Carriers
+Choppers added to Carriers
+More Su-33s on Carriers to match BLUE airplanes
+
+
+
+
+
+DCS Carriers List:
+
+RED Carriers:
+CV 1143.5 Admiral Kuznetsov - Carrier - KUZNECOW
+
+RED Super Carriers:
+CV 1143.5 Admiral Kuznetsov (2017) - Super Carrier - CV_1143_5
+
+BLUE Carriers:
+CVN-74 John C Stennis - Carrier - Stennis
+CVN-70 Carl Vinson - Carrier - VINSON
+
+BLUE Super Carriers:
+CVN-71 Theodore Roosevelt - Super Carrrier - CVN_71
+CVN-72 Abraham Lincoln - Super Carrier - CVN_72 
+CVN-73 George Washington - Super Carrier - CVN_73
+CVN_75 Harry S. Truman - Super Carrier - CVN_75
