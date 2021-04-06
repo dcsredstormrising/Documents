@@ -34,14 +34,6 @@ In order to have both Dynamic Super Carrier and Static Super Carrier side by sid
 the dynamic ship, then we respawn him in the naval warehouse.  If we killed the ship that is part of the mission, then nothing happens.  We do not respawn him.  The way this is done is by a new function where we check for carrier type 
 (CV_1143_5) and then we check for naval warehouse carrier name: "Resupply".  If the name of the unit has "Resupply" in it, it came from the warehouse.  That's when and only when we run the Naval Warehouse Respawn logic. Problem solved.
 
-Added:
-Being able to spawn on Super Carriers
-Choppers added to Carriers
-More Su-33s on Carriers to match BLUE airplanes
-
-
-
-
 
 DCS Carriers List:
 
